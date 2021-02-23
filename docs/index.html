@@ -1,12 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <title> Julia by Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<div class="sidenav">
+    <h2> Julia by Example</h2>
+    <a href="#about">About</a>
+    <a href="#basics">Basics</a>
+    <button class="dropdown-btn"> 2D Graphics
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
+
+    <button class="dropdown-btn">3D Graphics
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Linka 1</a>
+        <a href="#">Linka 2</a>
+        <a href="#">Linka 3</a>
+    </div>
+</div>
+
+<div id="content" class="main">
+    <h1>Hello</h1>
+
+</div>
+
+<script>
+    let mainPage = "about.html"
+    async function load_page() {
+        document.getElementById("content").innerHTML = await (await fetch(mainPage)).text();
+    }
+    load_page();
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    let dropdown = document.getElementsByClassName("dropdown-btn");
+    console.log("Caca = " + dropdown.length)
+    let i;
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            let dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+    let links = document.getElementsByTagName("a");
+    for (i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function () {
+            let page = this.getAttribute("href").substring(1) + ".html";
+            console.log(page);
+
+            async function load_page() {
+                document.getElementById("content").innerHTML = await (await fetch(page)).text();
+            }
+
+            load_page()
+
+        });
+    }
+
+</script>
+
 
 </body>
 </html>
