@@ -1,11 +1,12 @@
 body {
     font-family: "Lato", sans-serif;
+    max-width: 1000px;
 }
 
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
-    width: 300px;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -16,12 +17,13 @@ body {
 }
 
 h1 {
-    font-family: Quicksand sans-serif;
+    font-family: Quicksand;
     color: #bd4c2f;
 }
 
 p {
-    font-family: Poppins sans-serif;
+    font-family: Poppins;
+    font-size: 16px;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -51,7 +53,7 @@ p {
 
 /* Main content */
 .main {
-    margin-left: 300px; /* Same as the width of the sidenav */
+    margin-left: 250px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
@@ -75,8 +77,19 @@ p {
     padding-right: 8px;
 }
 
+.codebox {
+    font-size: 12px;
+    padding: 12px;
+    background: #77a05b;
+    width: 80%;
+    border-radius: 5px;
+    font-family: "DejaVu Sans";
+    box-shadow: 1px 2px 5px gray;
+}
+
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+

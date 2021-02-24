@@ -8,14 +8,18 @@
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="julia.css">
+    <link rel="icon" href="images/julialogo.png" type="image/x-icon"/>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 <body>
-
 <div class="sidenav">
     <h2> Julia by Example</h2>
     <a href="#about">About</a>
     <a href="#basics">Basics</a>
+    <a href="#cube">Cube</a>
     <button class="dropdown-btn"> 2D Graphics
         <i class="fa fa-caret-down"></i>
     </button>
@@ -37,14 +41,18 @@
 
 <div id="content" class="main">
     <h1>Hello</h1>
-
+    <div class="highlight">
+        <pre><span class="k">print</span> <span class="s">&quot;Hello World&quot;</span></pre>
+    </div>
 </div>
 
 <script>
     let mainPage = "about.html"
+
     async function load_page() {
         document.getElementById("content").innerHTML = await (await fetch(mainPage)).text();
     }
+
     load_page();
     /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
     let dropdown = document.getElementsByClassName("dropdown-btn");
