@@ -12,13 +12,18 @@
     <link rel="icon" href="images/coding.png" type="image/x-icon"/>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="mathjax-config.js" defer></script>
 
-    <script type="text/x-mathjax-config">
+
+    <script src="mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+
+
+
 </head>
 
 <body>
@@ -26,12 +31,6 @@
 <script>
     $(function () {
         $("#nav-placeholder").load("nav.html");
-    });
-    $(function () {
-        $("#footer-placeholder").load("footer.html");
-    });
-    $(function () {
-        $("#latex-macros").load("macros.html");
     });
 </script>
 
@@ -42,18 +41,31 @@
 
 
 <div id="content" class="main">
-    For a pendulum whose state is determined by $\theta$, we have that
-    $$ E = \oh\omega^2 - k \cos(\theta)$$
-    When $a \neq 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
-    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-    Also consider Gauss-Bonnet Theorem
-    $$ \int_S \kappa = 4\pi \chi(S)$$
+    <div style="text-align: center;line-height: .8; ">
+        <h1> Julia by Example</h1>
+        <h2> by Calos Valero </h2>
+        <h3>info@carlosvalero.com </h3>
+    </div>
+    <br>
+    <hr>
+    <p class="justified">
+        The purpose of this "blog" is to introduce the Julia Programming Language through a
+        collection of examples. Each of them introduces a new concept of the Julia.
+        and simple example of its usage and end it by showing more sophisticated example.
+        The purpose of this "blog" is to introduce the Julia Programming Language through a
+        collection of examples. We begin each example by introducing a new concept of the Julia
+        and simple example of its usage and end it by showing more sophisticated example.
+        The purpose of this "blog" is to introduce the Julia Programming Language through a
+        collection of examples. We begin each example by introducing a new concept of the Julia
+        and simple example of its usage and end it by showing more sophisticated example.
+        <br>
+        We have $F=ma$ and
+        $$ E = mc^2$$ where
+        $$\pde{f}{x}(x)=\lim_{h\mapsto0}\frac{f(x+h)-f(x)}{h}$$
+    </p>
+
+    <hr>
 </div>
-
-<div id="footer-placeholder">
-
-</div>
-
 
 </body>
 </html>

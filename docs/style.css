@@ -11,7 +11,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #112;
+    background-color: #111126;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -53,7 +53,7 @@ p {
 
 /* Main content */
 .main {
-    margin-left: 250px; /* Same as the width of the sidenav */
+    margin-left: 280px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
@@ -97,4 +97,9 @@ p {
     background-color: gray;
     position: absolute;
     bottom: 0px
+}
+
+.justified {
+    text-align: justify;
+    text-justify: inter-word;
 }
