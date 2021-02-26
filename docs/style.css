@@ -93,3 +93,8 @@ p {
     .sidenav a {font-size: 18px;}
 }
 
+.footer {
+    background-color: gray;
+    position: absolute;
+    bottom: 0px
+}

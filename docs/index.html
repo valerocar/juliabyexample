@@ -10,81 +10,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="julia.css">
     <link rel="icon" href="images/julialogo.png" type="image/x-icon"/>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="mathjax-config.js" defer></script>
+    <script type="text/x-mathjax-config">
+    </script>
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 </head>
 <body>
-<div class="sidenav">
-    <h2> Julia by Example</h2>
-    <a href="#about">About</a>
-    <a href="#basics">Basics</a>
-    <a href="#cube">Cube</a>
-    <button class="dropdown-btn"> 2D Graphics
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-    </div>
 
-    <button class="dropdown-btn">3D Graphics
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Linka 1</a>
-        <a href="#">Linka 2</a>
-        <a href="#">Linka 3</a>
-    </div>
+<div id="nav-placeholder">
 </div>
+
+\(
+\def\oh{{\frac{1}{2}}}
+\)
 
 <div id="content" class="main">
-    <h1>Hello</h1>
-    <div class="highlight">
-        <pre><span class="k">print</span> <span class="s">&quot;Hello World&quot;</span></pre>
-    </div>
+    For a pendulum whose state is determined by $\theta$, we have that
+    $$ E = \oh\omega^2 - k \cos(\theta)$$
+    When $a \neq 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+    Also consider Gauss-Bonnet Theorem
+    $$ \int_S \kappa = 4\pi \chi(S)$$
 </div>
 
+<div id="footer-placeholder">
+
+</div>
 <script>
-    let mainPage = "about.html"
-
-    async function load_page() {
-        document.getElementById("content").innerHTML = await (await fetch(mainPage)).text();
-    }
-
-    load_page();
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-    let dropdown = document.getElementsByClassName("dropdown-btn");
-    console.log("Caca = " + dropdown.length)
-    let i;
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            let dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        });
-    }
-    let links = document.getElementsByTagName("a");
-    for (i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", function () {
-            let page = this.getAttribute("href").substring(1) + ".html";
-            console.log(page);
-
-            async function load_page() {
-                document.getElementById("content").innerHTML = await (await fetch(page)).text();
-            }
-
-            load_page()
-
-        });
-    }
-
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+    $(function(){
+        $("#footer-placeholder").load("footer.html");
+    });
 </script>
+
 
 
 </body>
