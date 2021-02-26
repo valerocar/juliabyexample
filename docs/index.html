@@ -9,24 +9,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="julia.css">
-    <link rel="icon" href="images/julialogo.png" type="image/x-icon"/>
+    <link rel="icon" href="images/coding.png" type="image/x-icon"/>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="mathjax-config.js" defer></script>
+
     <script type="text/x-mathjax-config">
     </script>
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 </head>
+
 <body>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("nav.html");
+    });
+    $(function () {
+        $("#footer-placeholder").load("footer.html");
+    });
+    $(function () {
+        $("#latex-macros").load("macros.html");
+    });
+</script>
 
 <div id="nav-placeholder">
 </div>
+<div id="latex-macros">
+</div>
 
-\(
-\def\oh{{\frac{1}{2}}}
-\)
 
 <div id="content" class="main">
     For a pendulum whose state is determined by $\theta$, we have that
@@ -40,15 +53,6 @@
 <div id="footer-placeholder">
 
 </div>
-<script>
-    $(function(){
-        $("#nav-placeholder").load("nav.html");
-    });
-    $(function(){
-        $("#footer-placeholder").load("footer.html");
-    });
-</script>
-
 
 
 </body>
