@@ -12,18 +12,7 @@
     <link rel="icon" href="images/coding.png" type="image/x-icon"/>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-    <script src="mathjax-config.js" defer></script>
-    <script type="text/javascript" id="MathJax-script" defer
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
-    <script type="text/javascript" async
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-
-
-
+    <script src="load-mathjax.js" async></script>
 </head>
 
 <body>
@@ -36,9 +25,6 @@
 
 <div id="nav-placeholder">
 </div>
-<div id="latex-macros">
-</div>
-
 
 <div id="content" class="main">
     <div style="text-align: center;line-height: .8; ">
@@ -49,21 +35,40 @@
     <br>
     <hr>
     <p class="justified">
-        The purpose of this "blog" is to introduce the Julia Programming Language through a
-        collection of examples. Each of them introduces a new concept of the Julia.
-        and simple example of its usage and end it by showing more sophisticated example.
-        The purpose of this "blog" is to introduce the Julia Programming Language through a
-        collection of examples. We begin each example by introducing a new concept of the Julia
-        and simple example of its usage and end it by showing more sophisticated example.
-        The purpose of this "blog" is to introduce the Julia Programming Language through a
-        collection of examples. We begin each example by introducing a new concept of the Julia
-        and simple example of its usage and end it by showing more sophisticated example.
-        <br>
-        We have $F=ma$ and
-        $$ E = mc^2$$ where
-        $$\pde{f}{x}(x)=\lim_{h\mapsto0}\frac{f(x+h)-f(x)}{h}$$
+        Consider a mechanical system with one degree of freedom $x = x(t)$ with potential function $U=U(x)$.
+        The law of conservation of energy establishes that
+        $$E(x(t),\dot{x}(t)) = \text{constant for all }t\in R$$
+        where
+        $$E(x,v) = \frac{1}{2}m v^2 + U(x).$$
+        The potential energy for a pendulum has the form
+        $$ U(x) = (g/l)\cos(x)$$
     </p>
+    <body>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    </body>
 
+    <script>
+        var size = 100, x = new Array(size), y = new Array(size), z = new Array(size), i, j;
+
+        for(var i = 0; i < size; i++) {
+            x[i] = y[i] = -2 * Math.PI + 4 * Math.PI * i / size;
+            z[i] = new Array(size);
+        }
+        for(var i = 0; i < size; i++) {
+            for(j = 0; j < size; j++) {
+                var r2 = x[i]*x[i] + y[j]*y[j];
+                z[i][j] = -Math.cos(y[j]) + x[i]*x[i]/2
+            }
+        }
+        var data = [ {
+            z: z,
+            x: x,
+            y: y,
+            type: 'contour'
+        }
+        ];
+        Plotly.newPlot('myDiv', data);
+    </script>
     <hr>
 </div>
 
